@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean.QEDSpectralLayer
+import HautevilleHouse.ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean.QEDBridgeLemmas
+import HautevilleHouse.ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean.QEDGateLemmas
+
+namespace HautevilleHouse
+namespace ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean
+
+open HautevilleHouse.ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean
+
+def ConstrainedQEDClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_qed_closure (A : AdmissibleClass) : ConstrainedQEDClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ElectromagneticInteractionQuantumElectrodynamicsCanonicalLaneLean
+end HautevilleHouse
